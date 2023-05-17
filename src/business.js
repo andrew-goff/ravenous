@@ -1,17 +1,19 @@
 function Business(){
-    const name = '';
-    const address = '';
-    const zipcode = '';
-    const category = 'Takeaway';
-    const rating = 4;
+    const business1 = {
+        imageSrc: '',
+        name: '',
+        address: '',
+        city: 'Albany',
+        state: 'NY',
+        zipcode: '12123',
+        category: 'Takeaway',
+        rating: 4,
+        reviewcount: 15,
+    }
     
     return(
         <div>
-            <p>{name}</p>
-            <p>{address}</p>
-            <p>{zipcode}</p>
-            <p>{category}</p>
-            <p>{rating}</p>
+            <p>{business1}</p>
         </div>
     );
 }
