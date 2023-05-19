@@ -1,17 +1,17 @@
 import './App.css';
-import { business1 } from './business.js';
+import Business from './business.js';
 import { React } from 'react';
-import { ReactDOM } from 'react-dom';
 
-function businessList(){
-    const [businessList] = business1;
+
+function BusinessList(){
+    const businessList = Business;
 
     return(
         <div id="Business List">
-            <h1>List of all Businesses:</h1>
+            <h1>List of all local restaurant and takeaway businesses:</h1>
             <p>{businessList}</p>
         </div>
     );
 }
 
-export default businessList;
+export default BusinessList;

@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
+import BusinessList from './businessList.js';
+import { React } from 'react';
+import ReactDOM  from 'react-dom';
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -20,6 +23,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <h1>Local Restaurants</h1>
+        <BusinessList />
+      </div>
     </div>
   );
 }
