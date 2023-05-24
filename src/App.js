@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import BusinessList from './businessList.js';
+import searchBar from './searchBar.js';
 import { React } from 'react';
 import ReactDOM  from 'react-dom';
 
@@ -19,9 +20,10 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
+        >  
         </a>
+        <h1>Search fror Businesses</h1>
+        <searchBar />
       </header>
       <div>
         <h1>Local Restaurants</h1>
