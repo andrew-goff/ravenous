@@ -25,7 +25,7 @@ const business2 = [
             zipcode: '12146',
             category: 'Pizzeria Takeaway',
             rating: 4,
-            reviewcount: 15,
+            reviewcount: 66,
         }
             
     ];   

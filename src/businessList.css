@@ -1,0 +1,25 @@
+.businessList {
+    text-align: center;
+    display: flex;
+    background-color: #8c93a8;
+}
+
+.business1-logo {
+    height: 20vmin;
+    pointer-events: none;
+}
+
+
+
+.Search-h1 {
+    color:burlywood;
+    min-height: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .business1-logo {
+      animation: business1-logo-spin infinite 20s linear;
+    }
+  }

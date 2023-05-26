@@ -1,11 +1,11 @@
+import './businessList.css';
 import './App.css';
 import Business from './business.js';
 import React  from 'react';
 import ReactDOM from 'react-dom';
 
-const businessList = ['https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
-'Papa Jons Pizzeria', '23 Darlington Street', 'Albany', 'Albany', 'NY', ''];
-const businessList2 = ['https://content.codecademy.com/programs/react/ravenous/pizza.jpg', 'Pizzeria'];
+const businessList = ['Papa Jons Pizzeria', '23 Darlington Street', 'Albany', 'NY', '12123', 'Takeaway', 4 , 15];
+const businessList2 = ['Pizzeria', '124 Main Street', '', 'NY', '', 4, 66];
 
 function BusinessList(){
     const business1items = businessList.map((business1Item => business1Item))
@@ -13,19 +13,24 @@ function BusinessList(){
 
     return(
         <div>
-            <h1>List of all local restaurant and takeaway businesses:</h1>
-            <div>Business 1</div>
-            {
-                businessList.map((item) => <li>{item}</li>)
-            }
-            <div>Business 2</div>
-            {
-                businessList2.map((item) => <li>{item}</li>)
-            }
-            <p></p>
+            <h1 className="App-h1">Local Restaurants</h1>
+            <h1 className="App-h1">List of all local restaurant and takeaway businesses:</h1>
+            <img src={'https://content.codecademy.com/programs/react/ravenous/pizza.jpg'} className="business1-logo" alt="logo" />
+            <div>
+                {
+                    business1items.map((item) => <li>{item}</li>)
+                }
+            </div>
+            <img src={'https://content.codecademy.com/programs/react/ravenous/pizza.jpg'} className="business1-logo" alt="logo" />
+            <div>
+                {
+                    business2items.map((item) => <li>{item}</li>)
+                }
+            </div>            
         </div>
     );
 }
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <BusinessList />;
 root.render(element);
