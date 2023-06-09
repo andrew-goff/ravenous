@@ -1,5 +1,7 @@
+//The component that displays the individual fields in the business array for each business
 import './businessList.css';
 import './App.css';
+import pizza from './image/pizza.jpg';
 import {business1} from './business.js';
 import {business2} from './business.js';
 import React  from 'react';
@@ -13,20 +15,16 @@ class BusinessList extends React.Component {
     //const business2items = businessList2.map((business2Item => business2Item))    
     render(){
       return(
-        <div className="App">
-            <header className="App-header">            
-                <h1 className="App-h1">Local Restaurants</h1>
-            </header>
-            <h1 className="App-h1">List of all local restaurant and takeaway businesses:</h1>
-                <img src={'https://content.codecademy.com/programs/react/ravenous/pizza.jpg'} className="business1-logo" alt="logo" />
-                <p>{this.props.imageSrc}</p>
-                <p>{this.props.name}</p>
-                <p>{this.props.address}</p>
-                <p>{this.props.city}</p>
-                <p>{this.props.state}</p>
-                <p>{this.props.zipcode}</p>
-                <img src={'https://content.codecademy.com/programs/react/ravenous/pizza.jpg'} className="business1-logo" alt="logo" />           
-        </div>
+        <div className="content-box">
+            <p className="Businesslist-p"><img src={'https://content.codecademy.com/programs/react/ravenous/pizza.jpg'} className="business1-logo" alt="logo" /></p>
+            <p className="Businesslist-p">{this.props.name}</p>
+            <p className="Businesslist-p">{this.props.address}</p>
+            <p className="Businesslist-p">{this.props.city}</p>
+            <p className="Businesslist-p">{this.props.state}</p>
+            <p className="Businesslist-p">{this.props.zipcode}</p> 
+            <p className="Businesslist-p">{this.props.rating}</p>
+            <p className="Businesslist-p">{this.props.reviewcount}</p>
+        </div>  
     );  
     }
     

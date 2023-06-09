@@ -3,10 +3,17 @@
   display: flex;
   background-color: #8c93a8;
 }
+.App-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c93a8;
+}
 
 .App-header {
   background-color: #8c93a8;
-  min-height: 100vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +25,12 @@
 .App-h1 {
   color:burlywood;
   min-height: 5vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #8c93a8;
+
 }
 
 .App-link {

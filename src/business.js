@@ -1,9 +1,11 @@
 import React from "react";
+import pizza from './image/pizza.jpg';
 import ReactDOM from "react-dom";
 
 export const business = [ 
     {
-            imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
+            id: 1,
+            imageSrc: pizza,
             name: 'Papa Jons Pizzeria',
             address: '23 Darlington Street',
             city: 'Albany',
@@ -14,7 +16,8 @@ export const business = [
             reviewcount: 15,
     },
     {
-            imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
+            id: 2,
+            imageSrc: pizza,
             name: 'Pizzeria',
             address: '124 Main Street',
             city: 'Albury',

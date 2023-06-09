@@ -6,7 +6,7 @@ import './businessList.css';
     render(){
       return(  
         <div>
-            <BusinessList imageSrc={this.props.businessObject.imageSrc} name={this.props.businessObject.name} address={this.props.businessObject.address} city={this.props.businessObject.city}/>
+            <BusinessList name={this.props.businessObject.name} address={this.props.businessObject.address} city={this.props.businessObject.city} state={this.props.businessObject.state} zipcode={this.props.businessObject.zipcode} rating={this.props.businessObject.rating} reviewcount={this.props.reviewcount}/>
         </div>    
       )
     }
