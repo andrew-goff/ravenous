@@ -11,11 +11,27 @@ function SearchBar(){
     const [businessValue, setBusiness] = useState('');
     const [locationValue, setLocation ] = useState('');
 
-    //const {register, handleSubmit} = useForm();
+    const data = [businessValue, locationValue];
+    const [sortState, setSortState] = useState("none");
+
+    let blue = '#2624cb';
+    const [sortColor, setsortColor] = useState(blue);
+
 
     const handleSubmit = (event) => {
-      alert(JSON.stringify(businessValue + locationValue));
-      event.preventDefault();
+      if(businessValue === '' ){
+        alert("Select a business to search for a review!");
+      }
+
+      else {
+        alert(JSON.stringify("Searching with " + businessValue + " , " + locationValue + " , " + setSortState.option.value));
+        event.preventDefault();
+      }
+    }
+
+    function handleTextColorChange(){
+      let gold = "burlywood";
+      setsortColor(gold);
     }
 
     const handleInputChange = (event) => {
@@ -30,14 +46,19 @@ function SearchBar(){
     return(
         <div>
           <h1 className="Search-h1">Search for Businesses</h1>
+          <select defaultValue={'BEST MATCH'} style= {{color: sortColor}} onClick={handleTextColorChange} onChange={(e => setSortState(e.target.value))}>
+            <option value="Best Match">Best Match</option>
+            <option value="Highest Rated">Highest Rated</option>
+            <option value="Most Reviewed">Most Reviewed</option>
+          </select>
           <form className="BusinessSearchForm" onSubmit={handleSubmit}>
             <label className="Searchbar-label">Set Business:</label>
-            <input name="business" value={businessValue} onChange={handleInputChange} />
+            <input type="text" name="business" value={businessValue} onChange={handleInputChange} />
             <label className="Searchbar-label">Set location:</label>
-            <input name="location" value={locationValue} onChange={handleTextChange} />
+            <input type="text" name="location" value={locationValue} onChange={handleTextChange} />
             <input type="submit" />
           </form>  
-          <button>Submit</button>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
         
     )
