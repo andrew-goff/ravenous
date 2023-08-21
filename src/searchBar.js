@@ -4,6 +4,7 @@ import { business } from './business';
 import './businessList.css';
 import SearchForm from './SearchForm';
 import { render } from 'react-dom';
+import './utils/api.js';
 import { useForm } from 'react-hook-form';
 import ReactDOM from 'react-dom';
 
@@ -58,7 +59,7 @@ function SearchBar(){
             <input type="text" name="location" value={locationValue} onChange={handleTextChange} />
             <input type="submit" />
           </form>  
-          <button onClick={handleSubmit}>Submit</button>
+          <Btn onClick={handleSubmit}>Submit</Btn>
         </div>
         
     )
