@@ -4,29 +4,31 @@ import { business } from './business';
 import './businessList.css';
 import SearchForm from './SearchForm';
 import { render } from 'react-dom';
-import './utils/api.js';
-import { Btn } from './utils/api.js';
+import getBusiness, { Btn } from './utils/api.js';
 import { useForm } from 'react-hook-form';
 import ReactDOM from 'react-dom';
 
 function SearchBar(){
-    const [businessValue, setBusiness] = useState('');
-    const [locationValue, setLocation ] = useState('');
+    const [businessValue, setBusinesses] = useState('');
+    const [term, setTerm] = useState('');
+    const [location, setLocation ] = useState('New York');
+    const [sortState, setSortState] = useState("best_match");
 
-    const data = [businessValue, locationValue];
-    const [sortState, setSortState] = useState("none");
+    
+
+    //const data = [term, businessValue, location, sortState];
 
     let blue = '#2624cb';
     const [sortColor, setsortColor] = useState(blue);
 
 
     const handleSubmit = (event) => {
-      if(businessValue === '' ){
+      if(term === '' ){
         alert("Select a business to search for a review!");
       }
 
       else {
-        alert(JSON.stringify("Searching with " + businessValue + " , " + locationValue + " , " + setSortState.option.value));
+        alert(JSON.stringify("Searching with " + term + " , " + location + " , " + setSortState.option.value));
         event.preventDefault();
       }
     }
@@ -36,13 +38,13 @@ function SearchBar(){
       setsortColor(gold);
     }
 
-    const handleInputChange = (event) => {
-      setBusiness(event.target.value);
+    const handleTerm = (target) => {
+      setTerm(target.value);
       //setState(JSON.stringify(data));
     }
 
-    const handleTextChange = (event) => {
-      setLocation(event.target.value);
+    const handleLocation = (target) => {
+      setLocation(target.value);
     }
 
     return(
@@ -55,14 +57,14 @@ function SearchBar(){
           </select>
           <form className="BusinessSearchForm" onSubmit={handleSubmit}>
             <label className="Searchbar-label">Set Business:</label>
-            <input type="text" name="business" value={businessValue} onChange={handleInputChange} />
+            <input type="text" name="term" value={term} onChange={handleTerm} placeholder="Search the Businesses"/>
             <label className="Searchbar-label">Set location:</label>
-            <input type="text" name="location" value={locationValue} onChange={handleTextChange} />
-            <input type="submit" onClick={handleSubmit}/>
+            <input type="text" name="location" value={location} onChange={handleLocation} placeholder="Which location?"/>
           </form>  
-          <Btn>Submit</Btn>
-        </div>
-        
+          <div className="SearchSubmit">
+            <button id="playBtn" onClick={()=> { getBusiness(term, location)}}>Submit</button>
+          </div>
+        </div>     
     )
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,9 +1,12 @@
 import React from "react";
+import { Axios } from "axios";
 import pizza from './image/pizza.jpg';
 import ReactDOM from "react-dom";
 
+
 export const business = [ 
-    {
+
+        {
             id: 1,
             imageSrc: pizza,
             name: 'Papa Jons Pizzeria',
@@ -14,8 +17,8 @@ export const business = [
             category: 'Takeaway',
             rating: 4,
             reviewcount: 15,
-    },
-    {
+        },
+        {
             id: 2,
             imageSrc: pizza,
             name: 'Pizzeria',
@@ -26,6 +29,6 @@ export const business = [
             category: 'Pizzeria Takeaway',
             rating: 4,
             reviewcount: 66,
-    }
+        }
             
 ];      
