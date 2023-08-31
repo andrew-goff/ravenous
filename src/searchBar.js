@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 
 function SearchBar(){
     const [businessValue, setBusinesses] = useState('');
-    const [term, setTerm] = useState('');
+    const [term, setTerm] = useState('Pizzeria');
     const [location, setLocation ] = useState('New York');
     const [sortState, setSortState] = useState("best_match");
 
