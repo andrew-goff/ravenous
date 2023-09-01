@@ -4,11 +4,12 @@ const apiKey = 'VpeVD2_ZS6wsKAM9DM9YV5o2gr7-gXkOKiKcWgUW-XOxBYWoY9l1Qh45UTds4jBY
 const cors = 'https://corsanywhere.herokuapp.com/';
 const Btn = document.getElementById('Btn');
 
+
+
 export default async function getBusiness(term, location, sortBy) {
     const requestParams = `?api_key=${apiKey}`;
     const url = `https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`;
 
-    //const urlToFetch = url + apiKey + requestParams;
     const api = {
         Authorization: { 
             Authorization: `Bearer ${apiKey}`,
